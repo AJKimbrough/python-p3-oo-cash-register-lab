@@ -39,7 +39,7 @@ class TestCashRegister:
         # self.cash_register.total = 0
         self.reset_register_totals()
 
-    def test_add_item_with_multiple_items(self):
+    def test_add_item_with_multipleitems(self):
         '''doesn"t forget about the previous total'''
         self.cash_register.add_item("Lucky Charms", 4.5)
         assert(self.cash_register.total == 4.5)
@@ -83,14 +83,14 @@ class TestCashRegister:
         assert(captured_out.getvalue() == "There is no discount to apply.\n")
         self.reset_register_totals()
 
-    def test_items_list_without_multiples(self):
+    def testitems_list_without_multiples(self):
         '''returns an array containing all items that have been added'''
         new_register = CashRegister()
         new_register.add_item("eggs", 1.99)
         new_register.add_item("tomato", 1.76)
         assert(new_register.items == ["eggs", "tomato"])
 
-    def test_items_list_with_multiples(self):
+    def testitems_list_with_multiples(self):
         '''returns an array containing all items that have been added, including multiples'''
         new_register = CashRegister()
         new_register.add_item("eggs", 1.99, 2)
